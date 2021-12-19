@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox #we import it seperately bcoz ?* imports classes and this is not a class
 from random import randint,choice,shuffle
+import qrcode
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
@@ -29,6 +30,8 @@ def password_generator():
 
     input_password.insert(0,password)
     print(f"Your password is: {password}")
+    img = qrcode.make(password)
+    img.save("random.png")
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
 def save_data():
